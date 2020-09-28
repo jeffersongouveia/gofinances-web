@@ -44,7 +44,8 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "semi": ["error", "never"]
   },
   "settings": {
     "import/resolver": {
