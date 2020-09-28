@@ -67,8 +67,8 @@ export const TableContainer = styled.section`
       padding: 20px 32px;
       border: 0;
       background: #fff;
-      font-size: 16px;
-      font-weight: normal;
+
+      font: 400 16px Poppins, sans-serif;
       color: #969cb3;
 
       &.title {

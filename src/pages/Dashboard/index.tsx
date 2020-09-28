@@ -38,8 +38,12 @@ const Dashboard: React.FC = () => {
   const [balance, setBalance] = useState<Balance>({} as Balance)
 
   function formatTransaction(transaction: Transaction): Transaction {
-    const formattedValue = formatValue(transaction.value)
     const formattedDate = dayjs(transaction.created_at).format('DD/MM/YYYY')
+    let formattedValue = formatValue(transaction.value)
+
+    if (transaction.type === 'outcome') {
+      formattedValue = `- ${formattedValue}`
+    }
 
     return { ...transaction, formattedValue, formattedDate }
   }
@@ -106,7 +110,9 @@ const Dashboard: React.FC = () => {
               {transactions.map(transaction => (
                 <tr key={transaction.id}>
                   <td className="title">{transaction.title}</td>
-                  <td className="income">{transaction.formattedValue}</td>
+                  <td className={transaction.type}>
+                    {transaction.formattedValue}
+                  </td>
                   <td>{transaction.category.title}</td>
                   <td>{transaction.formattedDate}</td>
                 </tr>
