@@ -24,6 +24,7 @@ jest.mock('../utils/formatValue.ts', () => ({
 import React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
 import MockAdapter from 'axios-mock-adapter'
+
 import api from '../services/api'
 import App from '../App'
 
@@ -203,6 +204,7 @@ describe('Dashboard', () => {
 
     const file = new File(
       [
+        // eslint-disable-next-line no-multi-str
         'title, type, value, category\
         Loan, income, 1500, Others\
         Website Hosting, outcome, 50, Others\
