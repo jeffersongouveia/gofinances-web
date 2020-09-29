@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-
 import Dropzone from 'react-dropzone'
+
 import { DropContainer, UploadMessage } from './styles'
 
 interface UploadProps {
@@ -10,13 +10,13 @@ interface UploadProps {
 const Upload: React.FC<UploadProps> = ({ onUpload }: UploadProps) => {
   function renderDragMessage(
     isDragActive: boolean,
-    isDragRejest: boolean,
+    isDragReject: boolean,
   ): ReactNode {
     if (!isDragActive) {
       return <UploadMessage>Selecione ou arraste o arquivo aqui.</UploadMessage>
     }
 
-    if (isDragRejest) {
+    if (isDragReject) {
       return <UploadMessage type="error">Arquivo não suportado</UploadMessage>
     }
 

@@ -45,7 +45,8 @@
         "tsx": "never"
       }
     ],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "no-console": "off"
   },
   "settings": {
     "import/resolver": {

@@ -182,11 +182,11 @@ describe('Dashboard', () => {
   })
 
   it('should be able to navigate to the import page', async () => {
-    const { getByText } = render(<App />)
+    const { getByTestId } = render(<App />)
 
     await actWait(500)
 
-    fireEvent.click(getByText('Importar'))
+    fireEvent.click(getByTestId('import'))
 
     await actWait()
 
